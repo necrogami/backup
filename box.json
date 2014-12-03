@@ -4,7 +4,9 @@
         "src"
     ],
     "files": [
-        "LICENSE"
+        "LICENSE",
+        "res/schema.json",
+        "src/vendors/herrera-io/phar-update/res/schema.json"
     ],
     "finder": [
         {
