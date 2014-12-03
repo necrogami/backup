@@ -2,3 +2,4 @@ vendor/
 backup.phar
 backup.phar.pubkey
 composer.lock
+private.key
