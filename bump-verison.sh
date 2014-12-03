@@ -26,8 +26,8 @@ git add downloads/backup-${TAG}.phar
 
 SHA1=$(openssl sha1 backup.phar)
 
-HASH=$(cut -d ';' -f 2 <<< "${SHA1}")
-
+HASH=$(cut -d ' ' -f 2 <<< "${SHA1}")
+echo ${HASH};
 JSON='name:"backup.phar"'
 JSON="${JSON},sha1:\"${HASH}\""
 JSON="${JSON},url:\"http://necrogami.github.io/backup/downloads/backup-${TAG}.phar\""
