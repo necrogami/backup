@@ -2,11 +2,12 @@
     "name": "whitecloud/backup",
     "require": {
         "aws/aws-sdk-php": "2.*",
-        "symfony/console": "~2.6"
+        "symfony/console": "~2.6",
+        "herrera-io/phar-update": "1.*"
     },
     "autoload": {
         "psr-0": {
-            "Wc": "src"
+            "Necrogami": "src"
         }
     }
 }

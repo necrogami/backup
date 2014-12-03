@@ -3,9 +3,10 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Wc\Command;
+use Necrogami\Command;
 use Symfony\Component\Console\Application;
 
-$application = new Application('WC Backup', '@package_version@');
+$application = new Application('Necrogami Backup', '@package_version@');
 $application->add(new Command\HelloCommand());
+$application->add(new Command\UpdateCommand());
 $application->run();
