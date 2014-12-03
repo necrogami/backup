@@ -18,7 +18,7 @@ class HelloCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello World');
+        $output->writeln('Hello Backup Users');
     }
 
 }
