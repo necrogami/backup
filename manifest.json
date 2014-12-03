@@ -1,7 +1,7 @@
 {
     "name": "backup.phar",
-    "publicKey": "http://necrogami.github.io/backup/pubkeys/backup-0.0.8.phar.pubkey",
-    "sha1": "SHA1(backup.phar)= 8e8ef5ef7d5f203e511ccd2b1d6dfd7b72a1d1f4",
-    "url": "http://necrogami.github.io/backup/downloads/backup-0.0.8.phar",
-    "version": "0.0.8"
+    "publicKey": "http://necrogami.github.io/backup/pubkeys/backup-0.1.0.phar.pubkey",
+    "sha1": "SHA1(backup.phar)= 151a99bee2fe80c69cce64d4a5a21fdcb10abb01",
+    "url": "http://necrogami.github.io/backup/downloads/backup-0.1.0.phar",
+    "version": "0.1.0"
 }
