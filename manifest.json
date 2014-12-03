@@ -16,7 +16,7 @@
     {
         "name": "backup.phar",
         "publicKey": "http://necrogami.github.io/backup/pubkeys/backup-0.1.7.phar.pubkey",
-        "sha1": "SHA1(backup.phar)= 87b4fa131aa3144eb32421ee195b43c0892cc335",
+        "sha1": "87b4fa131aa3144eb32421ee195b43c0892cc335",
         "url": "http://necrogami.github.io/backup/downloads/backup-0.1.7.phar",
         "version": "0.1.7"
     },
