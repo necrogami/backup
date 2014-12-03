@@ -1,8 +1,6 @@
 {
     "chmod": "0755",
-    "directories": [
-        "src"
-    ],
+    "directories": ["src"],
     "files": [
         "LICENSE",
         "res/schema.json",
