@@ -28,13 +28,13 @@ SHA1=$(openssl sha1 backup.phar)
 
 JSON='name:"backup.phar"'
 JSON="${JSON},sha1:\"${SHA1}\""
-JSON="${JSON},url:\"http://mattketmo.github.io/backup/downloads/backup-${TAG}.phar\""
+JSON="${JSON},url:\"http://necrogami.github.io/backup/downloads/backup-${TAG}.phar\""
 JSON="${JSON},version:\"${TAG}\""
 
 if [ -f backup.phar.pubkey ]; then
     cp backup.phar.pubkey pubkeys/backup-${TAG}.phar.pubkeys
     git add pubkeys/backup-${TAG}.phar.pubkeys
-    JSON="${JSON},publicKey:\"http://mattketmo.github.io/backup/pubkeys/backup-${TAG}.phar.pubkey\""
+    JSON="${JSON},publicKey:\"http://necrogami.github.io/backup/pubkeys/backup-${TAG}.phar.pubkey\""
 fi
 
 #
