@@ -1,0 +1,12 @@
+{
+    "name": "whitecloud/backup",
+    "require": {
+        "aws/aws-sdk-php": "2.*",
+        "symfony/console": "~2.6"
+    },
+    "autoload": {
+        "psr-0": {
+            "Wc": "src"
+        }
+    }
+}
