@@ -32,8 +32,8 @@ JSON="${JSON},url:\"http://necrogami.github.io/backup/downloads/backup-${TAG}.ph
 JSON="${JSON},version:\"${TAG}\""
 
 if [ -f backup.phar.pubkey ]; then
-    cp backup.phar.pubkey pubkeys/backup-${TAG}.phar.pubkeys
-    git add pubkeys/backup-${TAG}.phar.pubkeys
+    cp backup.phar.pubkey pubkeys/backup-${TAG}.phar.pubkey
+    git add pubkeys/backup-${TAG}.phar.pubkey
     JSON="${JSON},publicKey:\"http://necrogami.github.io/backup/pubkeys/backup-${TAG}.phar.pubkey\""
 fi
 
