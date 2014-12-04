@@ -17,5 +17,4 @@
     "main": "bin/backup",
     "output": "backup.phar",
     "stub": true,
-    "key": "private.key"
 }
