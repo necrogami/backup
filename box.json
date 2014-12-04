@@ -16,5 +16,5 @@
     "git-version": "package_version",
     "main": "bin/backup",
     "output": "backup.phar",
-    "stub": true,
+    "stub": true
 }
