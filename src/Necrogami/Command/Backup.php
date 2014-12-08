@@ -6,7 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class BackupCommand extends Command
+class Backup extends Command
 {
 
     protected function configure()
@@ -19,6 +19,7 @@ class BackupCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello Backup Users');
+        $output->writeln('Backup Commands:');
+        $output->writeln('  backup:system');
     }
 }

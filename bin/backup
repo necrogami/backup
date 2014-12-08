@@ -7,7 +7,7 @@ use Necrogami\Command;
 use Symfony\Component\Console\Application;
 
 $application = new Application('Necrogami Backup', '@package_version@');
-$application->add(new Command\UpdateCommand());
-$application->add(new Command\BackupCommand());
-$application->add(new Command\HelloCommand());
+$application->add(new Command\Update());
+$application->add(new Command\Backup());
+$application->add(new Command\Hello());
 $application->run();
