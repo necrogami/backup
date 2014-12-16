@@ -4,10 +4,12 @@
 require __DIR__.'/../vendor/autoload.php';
 
 use Necrogami\Command;
+use Necrogami\Config;
 use Symfony\Component\Console\Application;
+
+Config::getInstance();
 
 $application = new Application('Necrogami Backup', '@package_version@');
 $application->add(new Command\Update());
-$application->add(new Command\Backup());
-$application->add(new Command\Hello());
+$application->add(new Command\Backup\System());
 $application->run();
