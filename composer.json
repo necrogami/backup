@@ -5,7 +5,8 @@
         "symfony/console": "~2.6",
         "herrera-io/phar-update": "1.*",
         "league/flysystem": "~0.5",
-        "noodlehaus/config": "~0.1"
+        "noodlehaus/config": "~0.1",
+        "ifsnop/mysqldump-php": "1.*"
     },
     "autoload": {
         "psr-0": {
