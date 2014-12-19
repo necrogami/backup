@@ -51,5 +51,11 @@
         "sha1": "0ae21298cf128e7f16c316d3f249498d8c89187f",
         "url": "http://necrogami.github.io/backup/downloads/backup-0.1.14.phar",
         "version": "0.1.14"
+    },
+    {
+        "name": "backup.phar",
+        "sha1": "05e3f5842a4edfa49935c3f9351194e47ec9b606",
+        "url": "http://necrogami.github.io/backup/downloads/backup-0.2.0.phar",
+        "version": "0.2.0"
     }
 ]
