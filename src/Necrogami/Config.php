@@ -4,13 +4,12 @@ namespace Necrogami;
 
 use Noodlehaus\Config as Conf;
 
-
 class Config
 {
     /**
      * Protected Config variable.
-     * 
-     * @var Noodlehaus\Config 
+     *
+     * @var Noodlehaus\Config
      */
     protected static $_conf;
 
@@ -38,8 +37,7 @@ class Config
     protected function __construct()
     {
         $pharFile = \Phar::running(false);
-        if(empty($pharFile))
-        {
+        if (empty($pharFile)) {
             $file = realpath(__DIR__ . '/../../config/config.php');
         } else {
             $file = realpath(dirname($pharFile) . DIRECTORY_SEPARATOR . 'config.php');
@@ -70,23 +68,23 @@ class Config
     }
     /**
      * Public function that allows me to get a config variable via the singleton class.
-     * 
+     *
      * @return string
      */
-	public function get($val)
-	{
+    public function get($val)
+    {
         $conf = self::$_conf;
         return $conf->get($val);
-	}
+    }
 
     /**
      * Public function that allows me to set a config variable via the singleton class.
-     * 
+     *
      * @return string
      */
-	public function set($val)
-	{ 
+    public function set($val)
+    {
         $conf = self::$_conf;
         return $conf->set($val);
-	}
+    }
 }

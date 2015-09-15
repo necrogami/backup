@@ -18,7 +18,7 @@ class System extends Command
      *
      * @return void
      */
-    function configure()
+    public function configure()
     {
         $this
             ->setName('backup:system')
@@ -26,12 +26,12 @@ class System extends Command
     }
     /**
      * Executes for use with Symfony Command
-     * 
+     *
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return void
      */
-    function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         //AWS Config Setup
         $config = Config::getInstance();
@@ -51,34 +51,33 @@ class System extends Command
         $file = [];
 
         //Loop through Directories and add files to array
-        if(isset($directories) && is_array($directories))
-        {
-            foreach($directories as $dir)
-            {
+        if (isset($directories) && is_array($directories)) {
+            foreach ($directories as $dir) {
                 $di = new \RecursiveDirectoryIterator($dir);
                 foreach (new \RecursiveIteratorIterator($di) as $filename => $info) {
-                    $name = explode('/',$filename);
+                    $name = explode('/', $filename);
                     $name = end($name);
-                    if($name != '.' && $name != '..')
+                    if ($name != '.' && $name != '..') {
                         $file[] = $filename;
+                    }
                 }
             }
+        } else {
+            throw new Exception('Directories config expects an array.');
         }
         //Append files to end of main files array
-        if(isset($files) && is_array($files))
-        {
-            foreach($files as $info)
-            {
+        if (isset($files) && is_array($files)) {
+            foreach ($files as $info) {
                 $file[] = $info;
             }
         }
         //Loop through main files list and send them to S3
-        foreach($file as $info)
-        {
+        foreach ($file as $info) {
             $output->writeln('Reading '. $info. ' and writing to S3');
             $contents = $sfs->write("/".$date."/".$server.$info, $lfs->read($info));
-            if($contents = 1)
+            if ($contents = 1) {
                 $output->writeln('Wrote to S3');
+            }
         }
     }
 }
