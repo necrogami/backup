@@ -2,19 +2,19 @@
 
 namespace Necrogami\Command\Backup;
 
+use Aws\S3\S3Client;
+use League\Flysystem\Adapter\AwsS3;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+use Necrogami\Config;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Aws\S3\S3Client;
-use League\Flysystem\Filesystem;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Adapter\AwsS3;
-use Necrogami\Config;
 
 class System extends Command
 {
     /**
-     * Configures command for use with Symfony Command
+     * Configures command for use with Symfony Command.
      *
      * @return void
      */
@@ -24,11 +24,13 @@ class System extends Command
             ->setName('backup:system')
             ->setDescription('Creates a new Backup');
     }
+
     /**
-     * Executes for use with Symfony Command
+     * Executes for use with Symfony Command.
      *
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
+     *
      * @return void
      */
     public function execute(InputInterface $input, OutputInterface $output)
@@ -41,7 +43,7 @@ class System extends Command
         $lfs = new Filesystem(new Local('/'));
         $sfs = new Filesystem(new AwsS3($client, $config->get('aws.bucket')));
 
-        $date = date("Ymd");
+        $date = date('Ymd');
 
         //Backup Setup get Directories and Files
         $directories = $config->get('backup.directories');
@@ -73,8 +75,8 @@ class System extends Command
         }
         //Loop through main files list and send them to S3
         foreach ($file as $info) {
-            $output->writeln('Reading '. $info. ' and writing to S3');
-            $contents = $sfs->write("/".$date."/".$server.$info, $lfs->read($info));
+            $output->writeln('Reading '.$info.' and writing to S3');
+            $contents = $sfs->write('/'.$date.'/'.$server.$info, $lfs->read($info));
             if ($contents = 1) {
                 $output->writeln('Wrote to S3');
             }

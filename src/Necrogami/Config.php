@@ -38,9 +38,9 @@ class Config
     {
         $pharFile = \Phar::running(false);
         if (empty($pharFile)) {
-            $file = realpath(__DIR__ . '/../../config/config.php');
+            $file = realpath(__DIR__.'/../../config/config.php');
         } else {
-            $file = realpath(dirname($pharFile) . DIRECTORY_SEPARATOR . 'config.php');
+            $file = realpath(dirname($pharFile).DIRECTORY_SEPARATOR.'config.php');
         }
         $conf = Conf::load($file);
         self::$_conf = $conf;
@@ -64,8 +64,9 @@ class Config
      */
     public function __wakeup()
     {
-        throw new Exception("Cannot unserialize singleton");
+        throw new Exception('Cannot unserialize singleton');
     }
+
     /**
      * Public function that allows me to get a config variable via the singleton class.
      *
@@ -74,6 +75,7 @@ class Config
     public function get($val)
     {
         $conf = self::$_conf;
+
         return $conf->get($val);
     }
 
@@ -85,6 +87,7 @@ class Config
     public function set($val)
     {
         $conf = self::$_conf;
+
         return $conf->set($val);
     }
 }
