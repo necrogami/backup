@@ -59,7 +59,7 @@ class System extends Command
                 foreach (new \RecursiveIteratorIterator($di) as $filename => $info) {
                     $name = explode('/', $filename);
                     $name = end($name);
-                    if ($name != '.' && $name != '..') {
+                    if ($name !== '.' && $name !== '..') {
                         $file[] = $filename;
                     }
                 }
