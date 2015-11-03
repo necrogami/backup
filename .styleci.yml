@@ -1,0 +1,8 @@
+preset: recommended
+
+linting: true
+
+enabled:
+  - long_array_syntax
+  - strict
+  - unalign_double_arrow
