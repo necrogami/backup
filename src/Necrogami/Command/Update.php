@@ -16,8 +16,7 @@ class Update extends Command
     {
         $this
             ->setName('update')
-            ->setDescription('Updates backup.phar to the latest version')
-        ;
+            ->setDescription('Updates backup.phar to the latest version');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
